@@ -14,7 +14,7 @@ class _TestsViewState extends BaseState<TestsView> {
     return Container(
       height: dynamicHeight(0.1),
       color: themeData.primaryColor,
-      child: Placeholder(
+      child: const Placeholder(
 
       ),
 
