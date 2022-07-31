@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:mobx/mobx.dart';
 
-class BaseView<T> extends StatefulWidget {
+class BaseView<T extends Store>  extends StatefulWidget {
   final Widget Function(BuildContext context, T value) onPageBuilder;
-  final T? viewModel;
+  final T viewModel;
   final Function(T model)? onModelReady;
   final VoidCallback? onDispose;
 
@@ -10,7 +11,7 @@ class BaseView<T> extends StatefulWidget {
       {Key? key,
       this.onDispose,
       this.onModelReady,
-      this.viewModel,
+      required this.viewModel,
       required this.onPageBuilder})
       : super(key: key);
 
