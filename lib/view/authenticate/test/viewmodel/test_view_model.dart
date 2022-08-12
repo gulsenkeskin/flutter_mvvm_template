@@ -7,6 +7,9 @@ abstract class _TestViewModelBase with Store {
   @observable
   int number = 0;
 
+  @computed
+  bool get isEven=> number %2==0;
+
   @action
   void incrementNumber() {
     number++;
